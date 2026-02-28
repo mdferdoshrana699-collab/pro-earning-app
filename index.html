@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pro Earning App</title>
-
-    <!-- <script src='//libtl.com/sdk.js' data-zone='10664366' data-sdk='show_10664366'></script> -->
     
+    <script src='//libtl.com/sdk.js' data-zone='3246047'></script>
 </head>
-<body>
+<body style="text-align: center; padding-top: 50px; font-family: Arial, sans-serif; background-color: #f4f4f4;">
 
-    <h2>Welcome to Pro Earning</h2>
-    <button onclick="showAd()">Watch Ad & Earn</button>
+    <div style="background: white; display: inline-block; padding: 20px; border-radius: 10px; shadow: 0px 0px 10px rgba(0,0,0,0.1);">
+        <h2 style="color: #333;">Welcome to Pro Earning</h2>
+        <p style="color: #666;">নিচের বাটনে ক্লিক করে অ্যাড দেখুন এবং আয় করুন।</p>
+        
+        <button onclick="showAd()" style="padding: 15px 30px; font-size: 18px; cursor: pointer; background-color: #28a745; color: white; border: none; border-radius: 5px; font-weight: bold;">
+            Watch Ad & Earn
+        </button>
+    </div>
 
     <script>
         function showAd(){
-            alert("Ad will show here");
-            // এখানে Monetag এর rewarded function বসাবেন
+            // Monetag Rewarded Ad Call using your Zone ID: 3246047
+            if (typeof show_3246047 === 'function') {
+                show_3246047().then(() => {
+                    // অ্যাড দেখা শেষ হলে এই মেসেজটি আসবে
+                    alert("অভিনন্দন! আপনি সফলভাবে অ্যাডটি দেখেছেন।");
+                }).catch((error) => {
+                    console.error("Ad error:", error);
+                    alert("অ্যাড লোড হতে সমস্যা হচ্ছে, আবার চেষ্টা করুন।");
+                });
+            } else {
+                alert("অ্যাডটি এখনো লোড হচ্ছে অথবা অ্যাড ব্লকার চালু আছে। দয়া করে কিছুক্ষণ অপেক্ষা করুন।");
+            }
         }
     </script>
 
